@@ -9,9 +9,9 @@ def load_page():
 
 @app.route('/<page_name>/')
 def go_to_page(page_name):
-	hobbies = ["karate","basket", "watch_anime"]
-	hobby_list = random.sample(hobbies , 2)
-	return render_template(page_name + ".jinja", hobby_list = hobby_list ,title=page_name)
+	# hobbies = ["karate","basket", "watch_anime"]
+	# hobby_list = random.sample(hobbies , 2)
+	return render_template(page_name + ".jinja" ,title = page_name)
 
 
 
