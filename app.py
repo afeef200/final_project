@@ -14,9 +14,14 @@ def go_to_page(page_name):
 
 	return render_template(page_name + ".jinja" ,title = page_name)
 
-@app.route("/formsubmit", methods = ["GET" , "POST"])
+@app.route("/login", methods = ["GET" , "POST"])
 def formExmaple():
-	return "Thank You "
+	firstName = request.form['firstname']
+	lastName = request.form['lastname']
+	gender = request.form['gender']
+	suggestion = request.form['suggestion']
+	return render_template('login.jinja', title = "login" , firstName=firstName, lastName=lastName, gender=gender , suggestion = suggestion)
+
 
 
 # @app.route("/formsubmite", methods=["GET", "POST"])

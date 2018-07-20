@@ -10,4 +10,19 @@ Mobile number:0597555999
 </pre>
 <img src="{{ url_for('static', filename='12.jpg') }}" width=30% height=30%>
 
+<form action="/login" method="POST">
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  <br>Gender:<br>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br>
+  suggestion:<br>
+  <input type="text" name="suggestion"><br>
+  <input type="submit" value="submit">
+  </form>
+
+
 {% endblock %}

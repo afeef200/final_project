@@ -2,14 +2,29 @@
 {% block body %} 
 
 
-<form action="/formsubmit" method="POST">
-<br>Gender:<br>
-  <input type="radio" name="gender" value="male" checked> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other<br>
-  <input type="submit" value="submit">
 
-</form>
+{% if (gender == "male" and (firstname|length>1 or lastname|length>1 or suggestion|length>1 )) %}
+<h1> Hello {{firstName}} {{lastName}}, you are a {{gender}}. </h1>
+<h1> And your suggestion was {{suggestion}}. </h1>
+
+{% else %}
+<h1>please type something. </h1>
+{% endif %}
+
+{% if (gender == "female" and (firstname|length>1 or lastname|length>1 or suggestion|length>1 ))  %}
+<h1> Hello {{firstName}} {{lastName}} </h1>
+<h1> And your suggestion was {{suggestion}},So Thank you </h1>
+
+{% else %}
+<h1>please type something. </h1>
+{% endif %}
+
+{% if gender == "other" %}
+<h1>{{firstName}} {{lastName}} Get out.  </h1>
+{% endif %}
+
+
+
 
 
 
