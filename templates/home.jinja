@@ -1,13 +1,64 @@
 {% extends "base.jinja" %}
 {% block body %}
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Code For Palestine</h1>
+  <p class="w3-xlarge">By Afeef and Yazan</p>
+  <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top"href="http://codeforpalestine.herokuapp.com/default">Schedule</a>
+</header>
 
-<h1 class="c1"> Hello!!<h1>
-<!-- <h1 class="c1">welcome to my website:)</h1> -->
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Python</h1>
+      <h5 class="w3-padding-32">
+        Python is a widely used high-level programming language for general-purpose programming, created by Guido van Rossum and first released in 1991.</h5>
+
+      <p class="w3-text-grey">An interpreted language, Python has a design philosophy which emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly brackets or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than might be used in languages such as C++ or Java.The language provides constructs intended to enable writing clear programs on both a small and large scale.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="{{ url_for('static', filename='python.png') }}" style = "border-radius: 50%">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="{{ url_for('static', filename='html.png') }}">
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Html</h1>
+      <h5 class="w3-padding-32">
+        Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript it forms a triad of cornerstone technologies for the World Wide Web.</h5>
+
+      <p class="w3-text-grey"> Web browsers receive HTML documents from a webserver or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Enjoy</h1>
+</div>
+
+<!-- Footer -->
 
 
-<img src="{{ url_for('static', filename='_MG_0071.JPG') }}" alt="Mountain View" width=50% height=50% style = "border-radius: 12px; display: block;
-margin-left: auto; margin-right: auto;">
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
 
-<!-- <p class="th" >Thank you for visting my website:) </p> -->
 
 {% endblock %}

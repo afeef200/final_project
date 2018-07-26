@@ -1,38 +1,54 @@
-{% extends "base.jinja" %}
-{% block body %} 
+<!DOCTYPE html>
+<html>
+<head>
+	<title> {{title}} </title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='naruto4.png') }}">
+</head>
+
+<body>
 
 
-
-{% if (gender == "male" and (firstname|length>1 or lastname|length>1 or suggestion|length>1 )) %}
-<h1> Hello {{firstName}} {{lastName}}, you are a {{gender}}. </h1>
-<h1> And your suggestion was {{suggestion}}. </h1>
-
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
 {% else %}
-<h1>please type something. </h1>
+ 
+ 
+<form action="/login" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+ 
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+ 
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			    <p class = "form-check-input" style="text-align:center;" , "font-size:0%;" >
+				Not registered? <a href="signup">create an account</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+</form>
+ 
 {% endif %}
 
-{% if (gender == "female" and (firstname|length>1 or lastname|length>1 or suggestion|length>1 ))  %}
-<h1> Hello {{firstName}} {{lastName}} </h1>
-<h1> And your suggestion was {{suggestion}},So Thank you </h1>
-
-{% else %}
-<h1>please type something. </h1>
-{% endif %}
-
-{% if gender == "other" %}
-<h1>{{firstName}} {{lastName}} Get out.  </h1>
-{% endif %}
 
 
 
-
-
-
-<!-- <form>
-  <input type="radio" name="gender" value="male" checked> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other
-</form> -->
-
-
-{% endblock %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends "base.jinja" %}
+{% block body %} 
+<br>
+<br>
+<br>
+
+{% if (user_type == "chef") or (user_type == "admin") %}
+
+<form action = "/kitchen", method='POST'>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Option 1</label>
+    <input type="text" name = "o_1" class="form-control" id="formGroupExampleInput" placeholder="Option 1">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Option 2</label>
+    <input type="text" name = "o_2" class="form-control" id="formGroupExampleInput2" placeholder="Option 2">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Option 3</label>
+    <input type="text" name = "o_3" class="form-control" id="formGroupExampleInput2" placeholder="Option 3">
+  </div>
+  <input type="submit" value="Submit">
+</form>
+
+{% else %}
+
+<form action = "/vote" method='POST'>
+<div class="checkbox">
+  <label><input type="radio" name = "v_1" value="">{{option_1}}</label>
+</div>
+
+<div class="checkbox">
+  <label><input type="radio" name = "v_2" value="">{{option_2}}</label>
+</div>
+
+<div class="checkbox">
+  <label><input type="radio" name = "v_3" value="">{{option_3}}</label>
+</div>
+  <input type="submit" value="Submit">
+</form>
+
+{% endif %}
+
+
+
+
+
+{% endblock %}

@@ -1,12 +1,16 @@
-ul {
+/*ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-}
+}*/
 
-li {
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+/*li {
     float: left;
 }
 
@@ -41,7 +45,7 @@ li a:hover:not(.active) {
     font-size:30px;
     border-radius: 12px;
     width: fit-content;
-    /*background-color: #00c252;*/
+    background-color: #00c252;
      
 }
 #I1{
@@ -57,6 +61,14 @@ li a:hover:not(.active) {
 body{
     background-image: url("a2.jpg");
 }
+
+.image_3{
+    border-radius: 50%;
+    width:48px;
+    height:48px;
+}
+
+
 .button {
     background-color: #4CAF50;
     border: none;
@@ -68,4 +80,50 @@ body{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}*/
+
+
+.ima_1 {
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+.container_2 {
+    float: left;
+  position: relative;
+  width: 20%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container_2:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }

@@ -1,0 +1,32 @@
+{% extends "base.jinja" %}
+
+
+{% block body %}
+
+<div class="table-title">
+<table class="table-fill">
+    <thead>
+        <tr>
+        	
+            {% for col in userLIst %}
+            <th>{{ col }}</th>
+            {% endfor %}
+
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in userList %}
+        <tr class="{{ loop.cycle('odd', 'even') }}">
+            {% set rowloop = loop %}
+            {% for col in row %}
+            <td id="cell-{{ rowloop.index }}-{{ loop.index }}">{{ row[col] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+{% endblock %}
